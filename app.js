@@ -6,12 +6,12 @@ search.addEventListener("click", (e) => {
     .then(response => response.json())
     .then(data => {
         let output = document.querySelector(".city-cont");
-        output.innerHTML = 
+        output.innerHTML += 
         `<div class="city-inner-cont">
             <div class="cityname">${data.name}</div>
-            <div class="temp">Temprature:${Math.floor(data["main"].temp-273)} °C </div>
-            <div class="pressure">Pressure:${data["main"].pressure}</div>
-            <div class="humidity">Humidity:${data["main"].humidity}</div>
+            <div class="temp">Temprature:<span>${Math.floor(data["main"].temp-273)} °C </span></div>
+            <div class="pressure">Pressure:<span>${data["main"].pressure}</span></div>
+            <div class="humidity">Humidity:<span>${data["main"].humidity}</span></div>
         </div>`
     }).catch(error=> alert("Enter valid City name."));
 });
